@@ -13,13 +13,12 @@ const MascotWidget: React.FC = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [chat, setChat] = useState<Chat | null>(null);
     const messagesEndRef = useRef<HTMLDivElement | null>(null);
+    const newMascotImage = "https://res.cloudinary.com/dy08afhuz/image/upload/v1758235530/Gemini_Generated_Image_1bwkbj1bwkbj1bwk_wegkkp.png";
 
     useEffect(() => {
         if (isOpen && !chat) {
             try {
-                // FIX: Initialize GoogleGenAI with a named apiKey parameter, using process.env.API_KEY.
                 const ai = new GoogleGenAI({apiKey: process.env.API_KEY || ''});
-                // FIX: Create a chat session with the specified model and system instruction.
                 const chatSession = ai.chats.create({
                     model: 'gemini-2.5-flash',
                     config: {
@@ -49,10 +48,7 @@ const MascotWidget: React.FC = () => {
         setIsLoading(true);
 
         try {
-            // FIX: Send a message to the chat session and get the response.
             const response = await chat.sendMessage({ message: userInput });
-            
-            // FIX: Extract the text from the response using the .text property.
             const botResponseText = response.text;
             
             const botMessage: Message = { sender: 'bot', text: botResponseText };
@@ -67,7 +63,7 @@ const MascotWidget: React.FC = () => {
     };
 
     if (!process.env.API_KEY) {
-        return null; // Don't render if API key is not set
+        return null;
     }
     
     return (
@@ -75,25 +71,25 @@ const MascotWidget: React.FC = () => {
             <div className={`fixed bottom-8 right-8 z-50 transition-transform duration-300 ${isOpen ? 'translate-y-full scale-0' : 'translate-y-0 scale-100'}`}>
                 <button 
                     onClick={() => setIsOpen(true)}
-                    className="bg-brand-amber rounded-full w-16 h-16 flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                    className="bg-brand-amber rounded-full w-20 h-20 flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
                     aria-label="Abrir chat con Yum Balam"
                 >
-                    <img src="https://res.cloudinary.com/dy08afhuz/image/upload/v1758235489/1000607122_iizqio.png" alt="Mascota Jaguar" className="w-12 h-12" />
+                    <img src={newMascotImage} alt="Mascota Jaguar Yum Balam" className="w-16 h-16" />
                 </button>
             </div>
 
-            <div className={`fixed bottom-0 right-0 sm:bottom-8 sm:right-8 w-full sm:w-96 h-full sm:h-[600px] bg-brand-dark-green/80 backdrop-blur-md rounded-t-lg sm:rounded-lg shadow-2xl z-50 transform transition-transform duration-500 ease-in-out ${isOpen ? 'translate-y-0' : 'translate-y-full'}`}>
+            <div className={`fixed bottom-0 right-0 sm:bottom-8 sm:right-8 w-full sm:w-96 h-full sm:h-[600px] bg-white/80 dark:bg-brand-dark-green/80 backdrop-blur-md rounded-t-lg sm:rounded-lg shadow-2xl z-50 transform transition-transform duration-500 ease-in-out ${isOpen ? 'translate-y-0' : 'translate-y-full'}`}>
                 <div className="flex flex-col h-full">
                     {/* Header */}
-                    <div className="flex justify-between items-center p-4 bg-brand-dark-green rounded-t-lg">
+                    <div className="flex justify-between items-center p-4 bg-white dark:bg-brand-dark-green rounded-t-lg border-b border-gray-200 dark:border-brand-light/20">
                         <div className="flex items-center gap-3">
-                            <img src="https://res.cloudinary.com/dy08afhuz/image/upload/v1758235489/1000607122_iizqio.png" alt="Mascota Jaguar" className="w-10 h-10" />
+                            <img src={newMascotImage} alt="Mascota Jaguar Yum Balam" className="w-12 h-12" />
                             <div>
-                                <h3 className="font-serif text-lg text-brand-amber">Yum Balam</h3>
-                                <p className="text-sm text-green-300">En línea</p>
+                                <h3 className="font-serif text-lg text-brand-dark-green dark:text-brand-amber">Yum Balam</h3>
+                                <p className="text-sm text-green-600 dark:text-green-300">En línea</p>
                             </div>
                         </div>
-                        <button onClick={() => setIsOpen(false)} className="text-brand-light hover:text-brand-amber text-2xl">
+                        <button onClick={() => setIsOpen(false)} className="text-gray-500 dark:text-brand-light hover:text-brand-amber text-2xl">
                             <i className="fas fa-times"></i>
                         </button>
                     </div>
@@ -102,14 +98,14 @@ const MascotWidget: React.FC = () => {
                     <div className="flex-grow p-4 overflow-y-auto space-y-4">
                         {messages.map((msg, index) => (
                             <div key={index} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-                                <div className={`max-w-xs lg:max-w-sm px-4 py-2 rounded-lg ${msg.sender === 'user' ? 'bg-brand-blue text-white rounded-br-none' : 'bg-brand-brown text-brand-light rounded-bl-none'}`}>
+                                <div className={`max-w-xs lg:max-w-sm px-4 py-2 rounded-lg ${msg.sender === 'user' ? 'bg-brand-blue text-white rounded-br-none' : 'bg-brand-brown dark:bg-black/25 text-brand-light rounded-bl-none'}`}>
                                     <p className="text-sm">{msg.text}</p>
                                 </div>
                             </div>
                         ))}
                         {isLoading && (
                              <div className="flex justify-start">
-                                <div className="max-w-xs lg:max-w-sm px-4 py-2 rounded-lg bg-brand-brown text-brand-light rounded-bl-none">
+                                <div className="max-w-xs lg:max-w-sm px-4 py-2 rounded-lg bg-gray-200 dark:bg-black/25 text-brand-light rounded-bl-none">
                                     <div className="flex items-center space-x-2">
                                         <div className="w-2 h-2 bg-brand-amber rounded-full animate-pulse"></div>
                                         <div className="w-2 h-2 bg-brand-amber rounded-full animate-pulse delay-200"></div>
@@ -122,14 +118,14 @@ const MascotWidget: React.FC = () => {
                     </div>
 
                     {/* Input */}
-                    <div className="p-4 bg-brand-dark-green border-t border-brand-light/20">
+                    <div className="p-4 bg-white dark:bg-brand-dark-green border-t border-gray-200 dark:border-brand-light/20">
                         <form onSubmit={handleSendMessage} className="flex gap-2">
                             <input
                                 type="text"
                                 value={userInput}
                                 onChange={(e) => setUserInput(e.target.value)}
                                 placeholder="Pregúntale a la selva..."
-                                className="flex-grow p-3 bg-brand-light/10 border border-brand-light/20 rounded-full focus:outline-none focus:border-brand-amber text-brand-light"
+                                className="flex-grow p-3 bg-gray-100 dark:bg-brand-light/10 border border-gray-300 dark:border-brand-light/20 rounded-full focus:outline-none focus:border-brand-amber text-brand-dark-text dark:text-brand-light"
                                 disabled={isLoading}
                             />
                             <button type="submit" disabled={isLoading || !userInput.trim()} className="bg-brand-amber text-brand-dark-green w-12 h-12 rounded-full flex items-center justify-center text-xl hover:bg-brand-blue hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed">

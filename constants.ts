@@ -1,77 +1,133 @@
-import { Value, TeamMember, Experience, Testimonial } from './types';
 
-export const VALUES_DATA: Value[] = [
+import { Experience, TeamMember, Value, Testimonial, Product } from './types';
+
+export const EXPERIENCES_DATA: Experience[] = [
   {
-    icon: 'fa-seedling',
-    title: 'Autenticidad',
-    description: 'Experiencias genuinas guiadas por miembros de nuestra comunidad, compartiendo nuestra cultura y tradiciones reales.',
+    id: 1,
+    title: "El Despertar de la Selva",
+    description: "Una caminata al amanecer para escuchar los sonidos de la fauna local, guiada por un experto que te enseñará los secretos de las plantas medicinales.",
+    image: "https://res.cloudinary.com/dy08afhuz/image/upload/v1758235395/1000587208_xflz2q.jpg",
+    duration: "4 horas",
+    price: "$1,200 MXN",
   },
   {
-    icon: 'fa-hand-holding-heart',
-    title: 'Respeto',
-    description: 'Profundo respeto por nuestra Madre Tierra, nuestras tradiciones ancestrales y por cada visitante que nos honra con su presencia.',
+    id: 2,
+    title: "Ruta del Jaguar",
+    description: "Explora los senderos menos transitados y descubre las ruinas de una ciudad maya olvidada, aprendiendo sobre la cosmovisión de nuestros ancestros.",
+    image: "https://res.cloudinary.com/dy08afhuz/image/upload/v1758235398/1000588231_s3n8jy.jpg",
+    duration: "Día completo",
+    price: "$2,500 MXN",
   },
   {
-    icon: 'fa-people-carry',
-    title: 'Comunidad',
-    description: 'El turismo beneficia directamente a nuestras familias, fortaleciendo nuestra economía y preservando nuestro modo de vida.',
-  },
-  {
-    icon: 'fa-leaf',
-    title: 'Sostenibilidad',
-    description: 'Prácticas de bajo impacto que protegen la biodiversidad de la Selva Lacandona para las futuras generaciones.',
-  },
+    id: 3,
+    title: "Noche de Historias y Estrellas",
+    description: "Alrededor de una fogata, escucha las leyendas de los Hach Wíinik contadas por un abuelo de la comunidad, bajo el manto de estrellas de la Vía Láctea.",
+    image: "https://res.cloudinary.com/dy08afhuz/image/upload/v1758235397/1000587977_flqjbf.jpg",
+    duration: "3 horas",
+    price: "$900 MXN",
+  }
 ];
 
 export const TEAM_MEMBERS_DATA: TeamMember[] = [
     {
-      name: 'Chan K’in',
-      role: 'Guía Principal y Contador de Historias',
-      image: 'https://res.cloudinary.com/dy08afhuz/image/upload/v1758235489/1000607130_nfkqtn.png',
-      quote: 'Cada sendero tiene una historia, y cada planta un secreto. Yo solo soy el traductor de la selva.'
+      name: "K'in Obregón",
+      role: "Guía Principal y Guardián",
+      image: "https://res.cloudinary.com/dy08afhuz/image/upload/v1758235402/1000589254_u0v2kl.jpg",
+      quote: "La selva no nos pertenece; nosotros pertenecemos a la selva. Mi trabajo es traducir sus susurros."
     },
     {
-      name: 'Nikte’',
-      role: 'Coordinadora de Talleres y Gastronomía',
-      image: 'https://res.cloudinary.com/dy08afhuz/image/upload/v1758235489/1000607127_c7xghc.png',
-      quote: 'Los sabores de nuestra cocina son el abrazo de nuestros ancestros. Cocinar es mantener viva nuestra memoria.'
+      name: "Ixchel Chan",
+      role: "Maestra Artesana y Cocinera",
+      image: "https://res.cloudinary.com/dy08afhuz/image/upload/v1758235400/1000588726_xrvqjr.jpg",
+      quote: "En cada tejido y en cada platillo, comparto la historia de mi pueblo, una historia de resiliencia y sabor."
     },
     {
-      name: 'Balam',
-      role: 'Experto en Supervivencia y Rastreo',
-      image: 'https://res.cloudinary.com/dy08afhuz/image/upload/v1758235489/1000607116_vryg5k.png',
-      quote: 'La selva no es un lugar para temer, sino un hogar para entender. Te enseña todo si sabes escuchar.'
+      name: "Balam Cohuo",
+      role: "Líder Comunitario y Narrador",
+      image: "https://res.cloudinary.com/dy08afhuz/image/upload/v1758235401/1000589209_fpxk6p.jpg",
+      quote: "Nuestra cultura es un árbol vivo. El turismo responsable ayuda a que sus raíces se hagan más fuertes."
     },
     {
-      name: 'Ixchel',
-      role: 'Guardián de Tradiciones y Artesanías',
-      image: 'https://res.cloudinary.com/dy08afhuz/image/upload/v1758235488/1000607106_rchw3s.png',
-      quote: 'En cada tejido, en cada pieza de barro, están las manos y los sueños de mi gente.'
+      name: "Yatzil Pech",
+      role: "Especialista en Flora y Fauna",
+      image: "https://res.cloudinary.com/dy08afhuz/image/upload/v1758235400/1000588827_f973gm.jpg",
+      quote: "Cada planta, cada animal, es una palabra en el gran libro de la vida. Te enseñaré a leerlo."
     }
   ];
-
-export const EXPERIENCES_DATA: Experience[] = [
-    { id: 1, title: "Cavernas Subacuáticas y Nado con Tortugas", price: "$2,200 MXN", image: "https://res.cloudinary.com/dy08afhuz/image/upload/v1758237401/cavernas_tortugas_p6x2r1.jpg", description: "Explora místicas cavernas y nada junto a majestuosas tortugas marinas en su hábitat natural.", duration: "Medio Día" },
-    { id: 2, title: "Nado con el Tiburón Ballena", price: "$3,950 MXN", image: "https://res.cloudinary.com/dy08afhuz/image/upload/v1758237401/tiburon_ballena_wfkzsv.jpg", description: "Vive la inolvidable experiencia de nadar junto al pez más grande del mundo en las aguas del Caribe.", duration: "Día Completo" },
-    { id: 3, title: "Holbox y Cabo Catoche", price: "$2,800 MXN", image: "https://res.cloudinary.com/dy08afhuz/image/upload/v1758237401/holbox_catoche_z9u9f1.jpg", description: "Descubre un paraíso virgen ideal para la pesca y el snorkel en la punta norte de la península.", duration: "Día Completo" },
-    { id: 4, title: "Holbox Mágico y 3 Islas", price: "$2,500 MXN", image: "https://res.cloudinary.com/dy08afhuz/image/upload/v1758237402/holbox_3islas_u8qfje.jpg", description: "Recorre la Isla Pasión, la Isla Pájaros y el cenote Yalahau en este tour clásico de Holbox.", duration: "Día Completo" },
-    { id: 5, title: "Chichén Itzá Clásico", price: "$3,500 MXN", image: "https://res.cloudinary.com/dy08afhuz/image/upload/v1758237401/chichen_itza_j2z7k9.jpg", description: "Visita una de las Siete Maravillas del Mundo Moderno con un guía certificado y sumérgete en la historia Maya.", duration: "Día Completo" },
-  ];
+  
+export const VALUES_DATA: Value[] = [
+    {
+      icon: "fa-seedling",
+      title: "Autenticidad",
+      description: "No actuamos. Compartimos nuestra vida, nuestras tradiciones y nuestra casa contigo."
+    },
+    {
+      icon: "fa-hand-holding-heart",
+      title: "Respeto",
+      description: "A la Madre Tierra, a nuestros ancestros y a ti, nuestro invitado. Caminamos con reverencia."
+    },
+    {
+      icon: "fa-people-carry",
+      title: "Comunidad",
+      description: "Tu visita beneficia directamente a las familias locales, fortaleciendo nuestra economía y cultura."
+    },
+    {
+      icon: "fa-leaf",
+      title: "Sostenibilidad",
+      description: "Practicamos un turismo que protege y regenera, asegurando que la selva prospere para futuras generaciones."
+    }
+];
 
 export const TESTIMONIALS_DATA: Testimonial[] = [
     {
-        quote: "No fue un viaje, fue una transformación. Los Hach Wíinik no te muestran la selva, te hacen parte de ella. Volví a casa con una nueva perspectiva de la vida y una profunda gratitud.",
-        author: "Ana Sofía R.",
-        location: "Ciudad de México, México"
+      quote: "Fue más que un viaje; fue una lección de vida. Sentí una conexión que ninguna foto puede capturar. Los Hach Wíinik no te muestran la selva, te hacen parte de ella.",
+      author: "Ana Sofía R.",
+      location: "Ciudad de México, MX"
     },
     {
-        quote: "La autenticidad es palpable. Escuchar las historias de Chan K'in junto al fuego, con los sonidos de la selva de fondo, es algo que el dinero no puede comprar. Inolvidable.",
-        author: "Michael B.",
-        location: "Toronto, Canadá"
+      quote: "La hospitalidad, las historias, la comida... todo fue increíblemente auténtico. Ver el compromiso que tienen con su tierra y su cultura es inspirador. Volveré.",
+      author: "Michael B.",
+      location: "Toronto, CA"
     },
     {
-        quote: "Pensé que iba a ver ruinas y animales, y lo hice, pero lo que más me impactó fue la calidez y sabiduría de la comunidad. Su conexión con la tierra es inspiradora. ¡Y la comida de Nikte' es espectacular!",
-        author: "Isabella G.",
-        location: "Florencia, Italia"
+      quote: "Nunca olvidaré el sonido de los monos aulladores al amanecer ni el sabor del pozol preparado por Doña Ixchel. Este lugar te cambia. Gracias, Yuum B'otik.",
+      author: "Elena G.",
+      location: "Madrid, ES"
     }
+];
+
+// FIX: Added PRODUCTS_DATA which was missing.
+export const PRODUCTS_DATA: Product[] = [
+  {
+    id: 101,
+    name: "Collar de Semillas de la Selva",
+    category: 'Artesanía',
+    price: 450,
+    image: "https://res.cloudinary.com/dy08afhuz/image/upload/v1758235405/1000590400_llv2fr.jpg",
+    description: "Tejido a mano por artesanas de la comunidad, este collar utiliza semillas recolectadas de forma sostenible en la selva. Cada pieza es única."
+  },
+  {
+    id: 102,
+    name: "Jarrón de Barro con Glifos Mayas",
+    category: 'Artesanía',
+    price: 800,
+    image: "https://res.cloudinary.com/dy08afhuz/image/upload/v1758235404/1000590217_c0pfk7.jpg",
+    description: "Moldeado y pintado a mano, este jarrón representa la conexión de los Hach Wíinik con sus ancestros a través de los sagrados glifos."
+  },
+  {
+    id: 201,
+    name: "Libro Digital: 'Susurros del Jaguar'",
+    category: 'Libro Digital',
+    price: 250,
+    image: "https://res.cloudinary.com/dy08afhuz/image/upload/v1758235402/1000589574_f71kiz.jpg",
+    description: "Una colección de cuentos y leyendas Lacandonas, transmitidas de generación en generación. Descubre los secretos de la selva en este Ebook."
+  },
+  {
+    id: 301,
+    name: "Audiolibro: 'El Canto del Cenzontle'",
+    category: 'Audiolibro',
+    price: 300,
+    image: "https://res.cloudinary.com/dy08afhuz/image/upload/v1758235403/1000589885_q4w46w.jpg",
+    description: "Escucha las historias de la selva narradas por un abuelo de la comunidad, con sonidos ambientales grabados en el corazón de la Lacandona."
+  }
 ];

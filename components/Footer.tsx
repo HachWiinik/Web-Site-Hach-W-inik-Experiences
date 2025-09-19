@@ -1,9 +1,13 @@
 import React from 'react';
 import Logo from './Logo';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  onAdminClick: () => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onAdminClick }) => {
   return (
-    <footer className="bg-black/50 py-12">
+    <footer className="bg-brand-dark-text dark:bg-black/50 py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           
@@ -55,7 +59,9 @@ const Footer: React.FC = () => {
 
         </div>
         <div className="border-t border-brand-light/20 pt-6 text-center text-sm text-brand-light/60">
-          <p>© 2024 Cooperativa Hach Wíinik | Todos los derechos reservados.</p>
+          <p>© 2024 Cooperativa Hach Wíinik | Todos los derechos reservados.
+            <button onClick={onAdminClick} className="ml-4 opacity-50 hover:opacity-100 transition-opacity text-xs">[Admin]</button>
+          </p>
         </div>
       </div>
     </footer>

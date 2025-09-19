@@ -1,1 +1,12 @@
-full contents of index.css
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px; /* Offset for the fixed header */
+}
+
+/* These classes are used in Hero.tsx but not defined in tailwind config */
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+.animation-delay-500 {
+  animation-delay: 500ms;
+}

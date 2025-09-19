@@ -5,13 +5,13 @@ const Hero: React.FC = () => {
     <section id="inicio" className="h-screen relative flex items-center justify-center text-center overflow-hidden">
       <video
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        src="https://res.cloudinary.com/dy08afhuz/video/upload/v1758236609/grok-video-61ceeb3a-8e89-4bec-8609-5658d8038280_normal_e5giw2.mp4"
+        src="https://res.cloudinary.com/dy08afhuz/video/upload/v1758236644/grok-video-61ceeb3a-8e89-4bec-8609-5658d8038280_spicy_d1j3vn.mp4"
         autoPlay
         loop
         muted
         playsInline
       ></video>
-      <div className="absolute top-0 left-0 w-full h-full bg-brand-dark-green/70 z-10"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-black/60 dark:bg-brand-dark-green/70 z-10"></div>
       <div className="container mx-auto px-4 z-20 relative">
         <h1 className="font-serif text-4xl md:text-6xl text-white font-bold mb-4 animate-fade-in-down">
           Hach Wíinik: Los Guardianes de la Selva

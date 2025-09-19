@@ -1,11 +1,12 @@
 import React from 'react';
 
 const Logo: React.FC = () => (
-    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-brand-amber">
-        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
+    <img 
+      src="https://res.cloudinary.com/dy08afhuz/image/upload/v1758236515/Generated_Image_September_18_2025_-_10_50AM_2_zpoj9t.png" 
+      alt="Hach Wíinik Logo"
+      width="40" 
+      height="40" 
+    />
 );
 
 export default Logo;
